@@ -18,4 +18,4 @@ module.exports = (robot) ->
           "http://www.maniacworld.com/Pope-Benedict-XVI-Unleashes-Force-Lightning.jpg", 
           "http://www.politicalpoop.com/rumsfeld_lightning.jpg"
              ]
-      msg.send Math.floor(Math.random*list.length)
+      msg.send msg.random list
