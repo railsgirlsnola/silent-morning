@@ -12,5 +12,10 @@
 
 module.exports = (robot) ->
 
-   robot.respond /force lightning/i, (msg) ->
-      msg.send "http://ideologyofmadness.spookyouthouse.com/wp-content/uploads/2014/08/Lightning.gif"
+   robot.respond /force lighte?ning/i, (msg) ->
+      list = [
+          "http://ideologyofmadness.spookyouthouse.com/wp-content/uploads/2014/08/Lightning.gif", 
+          "http://www.maniacworld.com/Pope-Benedict-XVI-Unleashes-Force-Lightning.jpg", 
+          "http://www.politicalpoop.com/rumsfeld_lightning.jpg"
+             ]
+      msg.send Math.floor(Math.random*list.length)
