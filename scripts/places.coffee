@@ -1,5 +1,5 @@
 # Description:
-#   Pugme is the most important thing in life
+#   Places will take you away. It may not be where you wanted to go...
 #
 # Dependencies:
 #   None
@@ -8,24 +8,43 @@
 #   None
 #
 # Commands:
-#   hubot pug me - Receive a pug
-#   hubot pug bomb N - get N pugs
+#   hubot run away - run into traffic
 
 module.exports = (robot) ->
 
+  # This one's Gena's
+  robot.respond /run away/i, (msg) ->
+    msg.http("http://pugme.herokuapp.com/random")
+      .get() (err, res, body) ->
+        msg.send JSON.parse(body).pug
+
+  # Up for the Taking #2
   robot.respond /pug me/i, (msg) ->
     msg.http("http://pugme.herokuapp.com/random")
       .get() (err, res, body) ->
         msg.send JSON.parse(body).pug
 
-  robot.respond /pug bomb( (\d+))?/i, (msg) ->
-    count = msg.match[2] || 5
-    msg.http("http://pugme.herokuapp.com/bomb?count=" + count)
+  # Up for the Taking #3
+  robot.respond /pug me/i, (msg) ->
+    msg.http("http://pugme.herokuapp.com/random")
       .get() (err, res, body) ->
-        msg.send pug for pug in JSON.parse(body).pugs
+        msg.send JSON.parse(body).pug
 
-  robot.respond /how many pugs are there/i, (msg) ->
-    msg.http("http://pugme.herokuapp.com/count")
+  # Up for the Taking #4
+  robot.respond /pug me/i, (msg) ->
+    msg.http("http://pugme.herokuapp.com/random")
       .get() (err, res, body) ->
-        msg.send "There are #{JSON.parse(body).pug_count} pugs."
+        msg.send JSON.parse(body).pug
+
+  # Up for the Taking #5
+  robot.respond /pug me/i, (msg) ->
+    msg.http("http://pugme.herokuapp.com/random")
+      .get() (err, res, body) ->
+        msg.send JSON.parse(body).pug
+
+  # Up for the Taking #6
+  robot.respond /pug me/i, (msg) ->
+    msg.http("http://pugme.herokuapp.com/random")
+      .get() (err, res, body) ->
+        msg.send JSON.parse(body).pug
 
