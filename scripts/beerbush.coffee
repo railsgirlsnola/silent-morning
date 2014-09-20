@@ -42,7 +42,7 @@ module.exports = (robot) ->
   robot.brain.on 'loaded', =>
     robot.brain.data.ambushes ||= {}
 
-  robot.respond /ambush (.*?): (.*)/i, (msg) ->
+  robot.respond /beerbush (.*?): (.*)/i, (msg) ->
     users = robot.brain.usersForFuzzyName(msg.match[1].trim())
     if users.length is 1
       user = users[0]
