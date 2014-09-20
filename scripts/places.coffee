@@ -12,7 +12,6 @@
 
 module.exports = (robot) ->
 
-  # This one's Gena's
   robot.respond /run away/i, (msg) ->
     msg.http("http://pugme.herokuapp.com/random")
       .get() (err, res, body) ->
